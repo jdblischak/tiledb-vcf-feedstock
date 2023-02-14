@@ -12,5 +12,4 @@ cmake \
 
 make -j ${CPU_COUNT}
 
-cd libtiledbvcf-build
 make install-libtiledbvcf
