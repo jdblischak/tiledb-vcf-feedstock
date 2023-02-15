@@ -62,7 +62,7 @@ outputs:
         - make
       host:
         - numpy
-        - libtiledbvcf
+        - libtiledbvcf {{ version }}
         - python
         - pyarrow 9.0.*
         - pybind11
