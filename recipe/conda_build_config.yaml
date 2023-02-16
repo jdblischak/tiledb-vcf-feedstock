@@ -23,7 +23,4 @@ python_impl:
   - cpython
 libdeflate:
   - 1.12
-  - 1.13
-  - 1.14
-  - 1.16
   - 1.17
