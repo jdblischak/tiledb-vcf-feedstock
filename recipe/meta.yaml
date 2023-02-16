@@ -55,7 +55,7 @@ outputs:
         - otool -L ${PREFIX}/lib/libtiledbvcf.dylib | grep libhts  # [osx]
         # verify libdeflate is linked to libhts
         - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
-        - otool -L ${PREFIX}/lib/libhts.dylib.* | grep libdeflate  # [osx]
+        - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
 
   - name: tiledbvcf-py
     version: {{ version }}
