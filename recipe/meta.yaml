@@ -63,7 +63,8 @@ outputs:
         - numpy
         - libtiledbvcf {{ version }}
         - python
-        - pyarrow 9.0.*
+        - pyarrow 9.0.*  # [py==37]
+        - pyarrow 10.0.*  # [not py==37]
         - pybind11
         - rpdb
         - wheel
@@ -74,7 +75,8 @@ outputs:
         - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
         - python
-        - pyarrow 9.0.*
+        - pyarrow 9.0.*  # [py==37]
+        - pyarrow 10.0.*  # [not py==37]
         - pybind11
         - setuptools
         - pandas
