@@ -27,10 +27,10 @@ requirements:
     - make
   run:
     - tiledb 2.14.*
-    - htslib >=1.15
+    - htslib 1.15.*
   host:
     - tiledb 2.14.*
-    - htslib >=1.15
+    - htslib 1.15.*
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
@@ -43,10 +43,10 @@ outputs:
         - make
       host:
         - tiledb 2.14.*
-        - htslib >=1.15
+        - htslib 1.15.*
       run:
         - tiledb 2.14.*
-        - htslib >=1.15
+        - htslib 1.15.*
       commands:
         - tiledbvcf version
 
