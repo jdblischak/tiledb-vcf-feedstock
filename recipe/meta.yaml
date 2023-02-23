@@ -9,7 +9,6 @@ package:
 source:
   git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
   git_rev: dlh/sc-24772-msys2-htslib-msvc-prep
-  git_depth: 1
 
 build:
   number: 3
