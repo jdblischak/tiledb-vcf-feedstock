@@ -12,12 +12,13 @@ source:
 
 build:
   number: 3
-  skip: true  # [win or linux32 or py2k]
+  skip: true  # [linux32 or py2k]
 
 outputs:
   - name: libtiledbvcf
     version: {{ version }}
-    script: build-libtiledbvcf.sh
+    script: build-libtiledbvcf.sh  # [not win]
+    script: build-libtiledbvcf.bat  # [win]
     requirements:
       build:
         - {{ compiler('c') }}
@@ -27,13 +28,15 @@ outputs:
         - make
       host:
         - tiledb 2.14.*
-        - htslib >=1.15
+        - htslib >=1.15  # [not win]
+        - m2w64-htslib >=1.15  # [win]
       run:
         - tiledb 2.14.*
-        - htslib >=1.15
+        - htslib >=1.15  # [not win]
+        - m2w64-htslib >=1.15  # [win]
     test:
-      files:
-        - test-cli.sh
+      files:  # [not win]
+        - test-cli.sh  # [not win]
       commands:
         - tiledbvcf version
         # verify libhts is linked
@@ -43,11 +46,12 @@ outputs:
         - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
         - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
         - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
-        - bash test-cli.sh
+        - bash test-cli.sh  # [not win]
 
   - name: tiledbvcf-py
     version: {{ version }}
-    script: build-tiledbvcf-py.sh
+    script: build-tiledbvcf-py.sh  # [not win]
+    script: build-tiledbvcf-py.bat  # [win]
     requirements:
       build:
         - {{ compiler('c') }}
