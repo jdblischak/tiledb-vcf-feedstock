@@ -11,6 +11,10 @@ cmake ^
   ../libtiledbvcf
 if %ERRORLEVEL% neq 0 exit 1
 
+echo %CD%
+dir
+dir ..
+
 nmake
 if %ERRORLEVEL% neq 0 exit 1
 
