@@ -1,13 +1,15 @@
 diff --git a/apis/python/setup.py b/apis/python/setup.py
-index a1237d1..bf67312 100644
+index a1237d1..ac5e44e 100644
 --- a/apis/python/setup.py
 +++ b/apis/python/setup.py
-@@ -101,7 +101,7 @@ def find_libtiledbvcf():
+@@ -100,8 +100,8 @@ def find_libtiledbvcf():
+     if LIBTILEDBVCF_PATH:
          p.native_lib_install_dirs = [LIBTILEDBVCF_PATH]
  
-     libdirs = ["lib"]
+-    libdirs = ["lib"]
 -    libnames = ["libtiledbvcf.dylib", "libtiledbvcf.so"]
-+    libnames = ["libtiledbvcf.dylib", "libtiledbvcf.so", "tiledbvcf.lib"]
++    libdirs = ["lib", "bin"]
++    libnames = ["libtiledbvcf.dylib", "libtiledbvcf.so", "tiledbvcf.dll"]
      for root in p.native_lib_install_dirs:
          for libdir in libdirs:
              for libname in libnames:
