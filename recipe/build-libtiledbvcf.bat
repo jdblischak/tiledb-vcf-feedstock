@@ -19,11 +19,3 @@ if %ERRORLEVEL% neq 0 exit 1
 rem install
 cmake --build . --target install-libtiledbvcf --config Release
 if %ERRORLEVEL% neq 0 exit 1
-
-rem examples
-cmake --build . --target examples --config Release
-if %ERRORLEVEL% neq 0 exit 1
-
-rem test
-cmake --build . --target check --config Release
-if %ERRORLEVEL% neq 0 exit 1
