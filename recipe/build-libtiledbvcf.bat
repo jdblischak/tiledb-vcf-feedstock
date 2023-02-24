@@ -11,8 +11,8 @@ cmake ^
   ../libtiledbvcf
 if %ERRORLEVEL% neq 0 exit 1
 
-make -j %CPU_COUNT%
+nmake
 if %ERRORLEVEL% neq 0 exit 1
 
-make install-libtiledbvcf
+nmake install-libtiledbvcf
 if %ERRORLEVEL% neq 0 exit 1
