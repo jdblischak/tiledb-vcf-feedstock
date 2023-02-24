@@ -3,6 +3,7 @@
 mkdir libtiledbvcf-build
 cd libtiledbvcf-build
 
+rem configure
 cmake ^
   -DCMAKE_INSTALL_PREFIX:PATH="%LIBRARY_PREFIX%" ^
   -DOVERRIDE_INSTALL_PREFIX=OFF ^
@@ -11,12 +12,18 @@ cmake ^
   ../libtiledbvcf
 if %ERRORLEVEL% neq 0 exit 1
 
-echo %CD%
-dir
-dir ..
-
-nmake
+rem build
+cmake --build . --config Release
 if %ERRORLEVEL% neq 0 exit 1
 
-nmake install-libtiledbvcf
+rem test
+cmake --build . --target check --config Release
+if %ERRORLEVEL% neq 0 exit 1
+
+rem examples
+cmake --build . --target examples --config Release
+if %ERRORLEVEL% neq 0 exit 1
+
+rem install
+cmake --build . --target install-libtiledbvcf --config Release
 if %ERRORLEVEL% neq 0 exit 1
