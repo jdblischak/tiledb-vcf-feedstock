@@ -9,6 +9,8 @@ package:
 source:
   git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
   git_rev: dlh/sc-24772-msys2-htslib-msvc-prep
+  patches:
+    - 0001-libnames-win.patch
 
 build:
   number: 3
@@ -47,6 +49,44 @@ outputs:
         - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
         - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
         - bash test-cli.sh  # [not win]
+
+  - name: tiledbvcf-py
+    version: {{ version }}
+    script: build-tiledbvcf-py.sh  # [not win]
+    script: build-tiledbvcf-py.bat  # [win]
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - make  # [not win]
+      host:
+        - numpy
+        - libtiledbvcf {{ version }}
+        - python
+        - pyarrow 9.0.*
+        - pybind11
+        - rpdb
+        - wheel
+        - setuptools
+        - setuptools_scm 6.0.1
+        - setuptools_scm_git_archive
+      run:
+        - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
+        - {{ pin_subpackage('libtiledbvcf', exact=True) }}
+        - python
+        - pyarrow 9.0.*
+        - pybind11
+        - setuptools
+        - pandas
+    imports:
+      - tiledbvcf
+    test:
+      files:
+        - test-api.py
+      commands:
+        - python -c "import tiledbvcf; tiledbvcf.version"
+        - python test-api.py
 
 about:
   home: http://tiledb.com
