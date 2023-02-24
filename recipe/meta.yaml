@@ -47,7 +47,8 @@ outputs:
         # verify libdeflate is linked to libhts
         - ldd ${PREFIX}/lib/libhts.so.* | grep libdeflate  # [linux]
         - otool -L ${PREFIX}/lib/libhts.*.dylib | grep libdeflate  # [osx]
-        - tiledbvcf create --uri /tmp/test-tiledbvcf-conda
+        - tiledbvcf create --uri /tmp/test-tiledbvcf-conda  # [not win]
+        - tiledbvcf create --uri %SRC_DIR%\test-tiledbvcf-conda  # [win]
         - bash test-cli.sh  # [not win]
 
   - name: tiledbvcf-py
