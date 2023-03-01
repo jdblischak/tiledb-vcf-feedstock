@@ -13,7 +13,7 @@ cmake ^
 if %ERRORLEVEL% neq 0 exit 1
 
 rem build
-cmake --build . --config Release
+cmake --build . --config Release --parallel %CPU_COUNT%
 if %ERRORLEVEL% neq 0 exit 1
 
 rem install
