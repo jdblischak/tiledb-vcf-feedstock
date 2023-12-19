@@ -15,24 +15,17 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 numpy:
-- '1.21'
-- '1.21'
-- '1.21'
-- '1.21'
+- '1.22'
+- '1.23'
+- '1.22'
+- '1.22'
 pin_run_as_build:
-  pyarrow:
-    min_pin: x.x.x
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x
-pyarrow:
-- 10.0.1
-- 11.0.0
-- 9.0.0
 python:
 - 3.10.* *_cpython
-- 3.7.* *_cpython
+- 3.11.* *_cpython
 - 3.8.* *_cpython
 - 3.9.* *_cpython
 target_platform:
