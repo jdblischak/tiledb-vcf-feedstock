@@ -6,9 +6,14 @@ package:
   name: {{ name }}
   version: {{ version }}
 
+# source:
+#   url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
+#   sha256: {{ sha256 }}
+
 source:
-  url: https://github.com/TileDB-Inc/TileDB-VCF/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
+  git_rev: gspowley/update-python-build
+  git_depth: -1
 
 build:
   number: 0

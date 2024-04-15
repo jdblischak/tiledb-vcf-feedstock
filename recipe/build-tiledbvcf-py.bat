@@ -1,9 +1,13 @@
 @echo on
 
-cd apis\python
+@REM cd apis\python
 
-%PYTHON% setup.py install --single-version-externally-managed --record record.txt --libtiledbvcf="%LIBRARY_PREFIX%"
-if %ERRORLEVEL% neq 0 exit 1
+@REM %PYTHON% setup.py install --single-version-externally-managed --record record.txt --libtiledbvcf="%LIBRARY_PREFIX%"
+@REM if %ERRORLEVEL% neq 0 exit 1
 
-%PYTHON% setup.py clean --all
+@REM %PYTHON% setup.py clean --all
+@REM if %ERRORLEVEL% neq 0 exit 1
+
+set "TILEDBSOMA_DIR=%LIBRARY_PREFIX%"
+%PYTHON% -m pip install --no-deps --no-build-isolation -vv apis\python
 if %ERRORLEVEL% neq 0 exit 1
