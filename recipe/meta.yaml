@@ -12,7 +12,7 @@ package:
 
 source:
   git_url: https://github.com/TileDB-Inc/TileDB-VCF.git
-  git_rev: main
+  git_rev: gspowley/fix-python-cmake
   git_depth: -1
 
 build:
