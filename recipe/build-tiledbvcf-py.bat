@@ -8,6 +8,6 @@
 @REM %PYTHON% setup.py clean --all
 @REM if %ERRORLEVEL% neq 0 exit 1
 
-set "TILEDBSOMA_DIR=%LIBRARY_PREFIX%"
+set "TILEDBSOMA_PATH=%LIBRARY_PREFIX%"
 %PYTHON% -m pip install --no-deps --no-build-isolation -vv apis\python
 if %ERRORLEVEL% neq 0 exit 1
