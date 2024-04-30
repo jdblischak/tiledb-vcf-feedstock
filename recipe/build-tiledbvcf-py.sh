@@ -8,5 +8,5 @@ set -ex
 
 # $PYTHON setup.py clean --all
 
-export TILEDBSOMA_PATH=$PREFIX
+export LIBTILEDBVCF_PATH=$PREFIX
 $PYTHON -m pip install --no-deps --no-build-isolation -vv apis/python
