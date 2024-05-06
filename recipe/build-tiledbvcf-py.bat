@@ -1,13 +1,5 @@
 @echo on
 
-@REM cd apis\python
-
-@REM %PYTHON% setup.py install --single-version-externally-managed --record record.txt --libtiledbvcf="%LIBRARY_PREFIX%"
-@REM if %ERRORLEVEL% neq 0 exit 1
-
-@REM %PYTHON% setup.py clean --all
-@REM if %ERRORLEVEL% neq 0 exit 1
-
-set "LIBTILEDBVCF_PATH=%LIBRARY_PREFIX%"
-%PYTHON% -m pip install --no-deps --no-build-isolation -vv apis\python
+set "LIBTILEDBVCF_PATH=%LIBRARY_LIB%"
+%PYTHON% -m pip install --no-deps --no-build-isolation -v apis\python
 if %ERRORLEVEL% neq 0 exit 1
