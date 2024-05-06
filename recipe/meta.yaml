@@ -61,10 +61,12 @@ outputs:
         - pyarrow-hotfix                         # [build_platform != target_platform]
         - pybind11                               # [build_platform != target_platform]
         - numpy                                  # [build_platform != target_platform]
+        - pip                                    # [build_platform != target_platform]
       host:
         - numpy
         - libtiledbvcf {{ version }}
         - python
+        - pip
         - pyarrow
         - pyarrow-hotfix
         - pybind11 >=2.5
