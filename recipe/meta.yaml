@@ -70,10 +70,12 @@ outputs:
         - pyarrow
         - pyarrow-hotfix
         - pybind11 >=2.5
+        - wheel >=0.30
+        - setuptools >=18.0
+        - setuptools_scm 6.0.1
+        - setuptools_scm_git_archive
         - pip
         - scikit-build-core
-        - setuptools_scm
-        - setuptools_scm_git_archive
       run:
         - {{ pin_compatible('numpy', lower_bound='1.16', upper_bound='1.24') }}
         - {{ pin_subpackage('libtiledbvcf', exact=True) }}
