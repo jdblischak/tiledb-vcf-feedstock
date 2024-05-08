@@ -1,13 +1,14 @@
 {% set name = "tiledb-vcf" %}
 {% set version = "0.32.0rc0" %}
-{% set sha256 = "60683f3d6bc3ae8b6c90cee61c0bfe444a051d3bb6a74853dd8b7afc1833337c" %}
+{% set sha256 = "f3335de63f37bfe893a11fb983519cd4bacbd64b8a814667840fce78c0ccecbf" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/TileDB-Inc/TileDB-VCF/archive/refs/tags/{{ version }}.tar.gz
+  #url: https://github.com/TileDB-Inc/TileDB-VCF/archive/refs/tags/{{ version }}.tar.gz
+  url: https://github.com/jdblischak/TileDB-VCF/releases/download/{{ version }}/tiledbvcf-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
