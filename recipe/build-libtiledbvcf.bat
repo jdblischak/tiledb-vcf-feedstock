@@ -1,6 +1,6 @@
 @echo on
 
-cd github-release-tarball
+cd %SRC_DIR%\github-release-tarball
 mkdir libtiledbvcf-build
 cd libtiledbvcf-build
 
