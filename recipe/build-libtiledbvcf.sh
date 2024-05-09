@@ -2,8 +2,7 @@
 
 set -exo pipefail
 
-ls -R ${SRC_DIR}
-cd ${SRC_DIR}/github-release-tarball/
+cd github-release-tarball/
 
 mkdir libtiledbvcf-build && cd libtiledbvcf-build
 
