@@ -102,7 +102,7 @@ about:
   home: http://tiledb.com
   license: MIT
   license_family: MIT
-  license_file: LICENSE
+  license_file: github-release-tarball/LICENSE
   summary: 'Efficient variant-call data storage and retrieval library using the TileDB storage library.'
   description: |
     TileDB-VCF is the python interface to the TileDB-VCF library.
