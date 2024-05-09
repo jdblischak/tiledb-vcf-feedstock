@@ -7,11 +7,9 @@ package:
   version: {{ version }}
 
 source:
-  # GitHub release tarball to build libtiledbvcf
   - url: https://github.com/TileDB-Inc/TileDB-VCF/archive/refs/tags/{{ version }}.tar.gz
     sha256: 60683f3d6bc3ae8b6c90cee61c0bfe444a051d3bb6a74853dd8b7afc1833337c
-    folder: github-release-tarball
-  # tiledbvcf-py sdist to satisfy setuptools-scm
+  # tiledbvcf-py sdist: extract version.py to satisfy setuptools-scm
   - url: https://github.com/jdblischak/TileDB-VCF/releases/download/{{ version }}/tiledbvcf-{{ version }}.tar.gz
     sha256: {{ sha256 }}
     folder: python-sdist
@@ -102,7 +100,7 @@ about:
   home: http://tiledb.com
   license: MIT
   license_family: MIT
-  license_file: github-release-tarball/LICENSE
+  license_file: LICENSE
   summary: 'Efficient variant-call data storage and retrieval library using the TileDB storage library.'
   description: |
     TileDB-VCF is the python interface to the TileDB-VCF library.

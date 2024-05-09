@@ -2,8 +2,6 @@
 
 set -exo pipefail
 
-cd github-release-tarball/
-
 mkdir libtiledbvcf-build && cd libtiledbvcf-build
 
 # wrap CXX compiler to remove problematic args
