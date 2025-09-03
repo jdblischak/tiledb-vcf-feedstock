@@ -13,6 +13,7 @@ source:
   git_depth: -1
   patches:
     - inherit-force-external-spdlog.patch
+    - vcf-merger.patch
 
 build:
   number: 1
